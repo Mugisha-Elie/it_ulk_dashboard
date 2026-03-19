@@ -20,20 +20,28 @@ A production-ready IT asset management dashboard built for
 ## Project Structure
 
 ```
-ulk-it-dashboard/
-│
-├── index.html              ← App shell (pure markup, no inline scripts)
-│
-├── src/
-│   ├── main.js             ← Entry point: imports CSS, boots Alpine
-│   ├── style.css           ← Global styles, CSS variables, component classes
-│   ├── alpine-app.js       ← All Alpine reactive logic (createApp factory)
-│   └── data.js             ← Static/mock data (supply records, alerts, audit log)
-│
-├── tailwind.config.js      ← Tailwind theme (fonts, colours)
-├── postcss.config.js       ← PostCSS (Tailwind + Autoprefixer)
-├── vite.config.js          ← Vite dev server + build settings
-└── package.json            ← Dependencies & npm scripts
+IT_ULK_DASHBOARD (Root Folder)
+├── dashboard_backend/          <-- SERVER
+│   ├── node_modules/           <-- Backend dependencies (Ignored by Git)
+│   ├── .env                    <-- DB Credentials (MySQL host/user/pass)
+│   ├── index.js                <-- Node.js + Express + MySQL code
+│   ├── package-lock.json
+│   └── package.json            <-- Backend scripts (Express, mysql2, cors)
+├── node_modules/               <-- FRONTEND dependencies (Vite, Alpine, Tailwind)
+├── src/                        <-- UI LOGIC
+│   ├── alpine-app.js           <-- Alpine.js logic & fetch calls
+│   ├── main.js                 <-- Alpine & Tailwind initialization
+│   └── style.css               <-- Tailwind & custom CSS
+├── .env                        <-- (Optional) Frontend environment variables
+├── .gitignore                  <-- The "Security Guard" for the whole project
+├── .prettierrc                 <-- Code formatting rules
+├── index.html                  <-- Dashboard UI
+├── package-lock.json
+├── package.json                <-- Frontend scripts (Vite, Concurrently)
+├── postcss.config.js
+├── README.md                   <-- Project documentation
+├── tailwind.config.js          <-- Tailwind design settings
+└── vite.config.js              <-- Vite build settings
 ```
 
 ### Why this separation?

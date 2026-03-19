@@ -5,8 +5,6 @@ dist/
 .vite/
 
 # Environment / Secrets
-.env
-.env.local
 .env.*.local
 
 # Database / Local Logs
@@ -17,3 +15,4 @@ yarn-error.log*
 
 # Server specific
 server/node_modules/
+config.bat

@@ -4,8 +4,8 @@
   "description": "ULK IT Department Asset Management Dashboard",
   "scripts": {
     "format": "prettier --write \"src/**/*.{js,jsx,css,html}\"",
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "node init && vite",
+    "build": "node init && vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
